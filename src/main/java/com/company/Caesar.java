@@ -3,14 +3,18 @@ package com.company;
 public class Caesar {
 
 
-    private String alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+    private String alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz123456789";
     private StringBuilder cipheredWord = new StringBuilder();
     private char letter, cipheredLetter;
     private int newPosition;
 
-    public StringBuilder cipher(String word, int key){
-        creatingNewWord(word, key);
-        return cipheredWord;
+    public String cipher(String word, int key){
+        if(key <= 30) {
+            creatingNewWord(word, key);
+            return cipheredWord.toString();
+        }else{
+            return "Sorry, this algorithm can`t convert this";
+        }
     }
 
 
